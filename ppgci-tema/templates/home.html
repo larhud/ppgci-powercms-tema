@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="conteudo">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h2 class="titulo">Acontece</h2>
+                <div class="row itens">
+                    <div class="col-md-12">
+                        <div class="card item">
+                            <img src="{% static 'img/ppgciLogo.png' %}" class="" alt="Nota de Pesquisar" />
+                            <div class="card-body">
+                                <h5 class="card-title">Nota de Pesar</h5>
+                                <p class="card-text">
+                                    O IPGCI/IBICT/UFRJ lamenta, em profundo e saudoso pesar, o
+                                    falecimento da pesquisadora e professora, Doutora Isa
+                                    Maria Freire.
+                                </p>
+                                <a href="artigo.html" class="btn btn-primary">Leia mais</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="card item">
+                            <img src="{% static 'img/ufrjLogo.png' %}" class="" alt="Resultado Final" />
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    Resultado Final da Avaliação do PDSE 2024
+                                </h5>
+                                <p class="card-text">
+                                    Após deliberação, a comissão de avaliação das candidaturas
+                                    ao PDSE 2024 chegou à seguinte ordem de classificação dos
+                                    candidatos:
+                                </p>
+                                <a href="artigo.html" class="btn btn-primary">Leia mais</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="card item">
+                            <img src="{% static 'img/calendario.png' %}" class="" alt="Resultado Preliminar" />
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    Resultado Preliminar da Avaliação do PDSE 2024
+                                </h5>
+                                <p class="card-text">
+                                    Após deliberação, a comissão de avaliação das candidaturas
+                                    ao PDSE 2024 chegou à seguinte ordem de classificação dos
+                                    candidatos:
+                                </p>
+                                <a href="artigo.html" class="btn btn-primary">Leia mais</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="card item">
+                            <img src="{% static 'img/capesLogo.png' %}" class="" alt="Resultado Preliminar 2" />
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    Resultado Preliminar da Avaliação do PDSE 2024
+                                </h5>
+                                <p class="card-text">
+                                    Após deliberação, a comissão de avaliação das candidaturas
+                                    ao PDSE 2024 chegou à seguinte ordem de classificação dos
+                                    candidatos:
+                                </p>
+                                <a href="artigo.html" class="btn btn-primary">Leia mais</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="card item">
+                            <img src="{% static 'img/banner.png' %}" class="" alt="Resultado Final de Homologação" />
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    Resultado Final da Homologação ao PDSE 2024
+                                </h5>
+                                <p class="card-text">
+                                    Candidaturas PDSE homologadas (por ordem alfabética).
+                                </p>
+                                <a href="artigo.html" class="btn btn-primary">Leia mais</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <nav aria-label="Page navigation">
+                    <ul class="pagination justify-content-center mt-4">
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-md-4">
+                <div id="calendar"></div>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
