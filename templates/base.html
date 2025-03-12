@@ -1,10 +1,52 @@
 {% load static %}
+{% load menu_tags cms_tags static %}
+{% load google_translate %}
+
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PPGCI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
+    {% get_article 'header' as header %}
+    <title>{% block title %}{% endblock %}{{ header.title }}</title>
+    <meta name="description" content="{% cleanwhitespace %}{% block description %}{% endblock %}{% endcleanwhitespace %}">
+    <meta name="keywords" content="{% cleanwhitespace %}{% block keywords %}{% endblock %}{% endcleanwhitespace %}">
+    <meta name="author" content="">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="{% cleanwhitespace %}{% block ogtitle %}{% endblock %}{% endcleanwhitespace %}">
+    <meta property="og:description" content="{% cleanwhitespace %}{% block ogdescription %}{% endblock %}{% endcleanwhitespace %}">
+    <meta property="og:url" content="{{ request.build_absolute_uri }}">
+    <meta property="og:image" content="{% cleanwhitespace %}{% block allogimage %}https://{{ request.get_host }}{% block ogimage %}{% static 'img/escritosfb2.png' %}{% endblock %}{% endblock %}{% endcleanwhitespace %}">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="{{ header.title }}">
+    <meta property="og:type" content="website">
+    <meta property="fb:app_id" content="">
+
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="{% static 'img/apple-touch-icon-57x57.png' %}"/> 
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static 'img/apple-touch-icon-114x114.png' %}"/> 
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static 'img/apple-touch-icon-72x72.png' %}" /> 
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static 'img/apple-touch-icon-144x144.png' %}"/> 
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="{% static 'img/apple-touch-icon-60x60.png' %}" /> 
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="{% static 'img/apple-touch-icon-120x120.png' %}" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="{% static 'img/apple-touch-icon-76x76.png' %}" /> 
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{% static 'img/apple-touch-icon-152x152.png' %}" /> 
+    <link rel="icon" type="image/png" href="{% static 'img/favicon-196x196.png' %}" sizes="196x196" />
+    <link rel="icon" type="image/png" href="{% static 'img/favicon-96x96.png' %}" sizes="96x96" />
+    <link rel="icon" type="image/png" href="{% static 'img/favicon-32x32.png' %}" sizes="32x32" /> 
+    <link rel="icon" type="image/png" href="{% static 'img/favicon-16x16.png' %}" sizes="16x16" /> 
+    <link rel="icon" type="image/png" href="{% static 'img/favicon-128.png' %}" sizes="128x128" /> 
+    <meta name="application-name" content="&nbsp;"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" /> 
+    <meta name="msapplication-TileImage" content="mstile-144x144.png" /> 
+    <meta name="msapplication-square70x70logo" content="{% static 'img/mstile-70x70.png' %}" /> 
+    <meta name="msapplication-square150x150logo" content="{% static 'img/mstile-150x150.png' %}" /> 
+    <meta name="msapplication-wide310x150logo" content="{% static 'img/mstile-310x150.png' %}" /> 
+    <meta name="msapplication-square310x310logo" content="{% static 'img/mstile-310x310.png' %}" />
+
+    <link rel="canonical" href="{{ request.build_absolute_uri }}">
+    
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -17,15 +59,16 @@
     {% block styles %}{% endblock %}
   </head>
   <body>
+    {% google_translate type='vertical' language='pt-BR' %}
     <!-- Cabeçalho -->
     <header class="header">
       <div class="container">
         <div class="content">
           <div class="d-flex align-items-center gap-3">
             <a href="index.html"
-              ><img src="{% static 'img/ppgciLogo.png %}" alt="Logo PPGCI" class="logo"
+              ><img src="{% static 'img/ppgciLogo.png' %}" alt="Logo PPGCI" class="logo"
             /></a>
-            <img src="{% static 'img/ibict.png %}" alt="Logo Ibict" class="" />
+            <img src="{% static 'img/ibict.png' %}" alt="Logo Ibict" class="" />
           </div>
           <form class="d-flex busca">
             <input
