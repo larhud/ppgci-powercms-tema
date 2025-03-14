@@ -65,17 +65,18 @@
       <div class="container">
         <div class="content">
           <div class="d-flex align-items-center gap-3">
-            <a href="index.html"
+            <a href="/"
               ><img src="{% static 'img/ppgciLogo.png' %}" alt="Logo PPGCI" class="logo"
             /></a>
             <img src="{% static 'img/ibict.png' %}" alt="Logo Ibict" class="" />
           </div>
-          <form class="d-flex busca">
+          <form class="d-flex busca" method="get" action="/pesquisa">
             <input
               class="form-control"
               type="search"
               placeholder="Pesquisar"
               aria-label="Pesquisar"
+              name="q"
             />
             <button class="btn" type="submit">
               <i class="fa fa-search" aria-hidden="true"></i>
@@ -105,33 +106,7 @@
 
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Início</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">O Programa</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Corpo Docente</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Disciplinas</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Alumni</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Grupos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Infoteca</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Ingresso</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Secretaria</a>
-            </li>
+            {% show_menu %}
           </ul>
         </div>
       </div>

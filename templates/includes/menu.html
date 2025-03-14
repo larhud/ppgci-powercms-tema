@@ -1,0 +1,25 @@
+{% load mptt_tags menu_tags %}
+
+{% recursetree menu_itens %}
+    {% if node.is_leaf_node %}
+        <li  class="nav-item">
+            <a {% if node|is_active:request %} class="nav-link active"{% else %}class="nav-link" {% endif %} href="{{ node.get_link|default:"#" }}">{{ node.name }}</a>
+        </li>
+    {% else %}
+        {% if node.get_level == 0 %}
+            <li class="dropdown">
+                <a href="{{ node.get_link|default:"#" }}" class="dropdown-toggle{% if node|is_active:request %} active{% endif %}" data-toggle="dropdown">{{ node.name }} <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    {{ children }}
+                </ul>
+            </li>
+        {% elif node.get_level > 0 %}
+            <li class="dropdown">
+                <a href="{{ node.get_link|default:"#" }}" class="dropdown-toggle{% if node|is_active:request %} active{% endif %}" data-toggle="dropdown">{{ node.name }}</a>
+                <ul class="dropdown-menu">
+                    {{ children }}
+                </ul>
+            </li>
+        {% endif %}
+    {% endif %}
+{% endrecursetree %}
