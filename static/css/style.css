@@ -108,9 +108,6 @@ body {
   .itens .item {
     grid-template-columns: 1fr;
   }
-  .itens .item img {
-    width: auto;
-  }
   .itens .item .card-body {
     padding: 0;
   }

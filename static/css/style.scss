@@ -103,9 +103,9 @@ body {
         }
         @media screen and (max-width: 768px) {
             grid-template-columns: 1fr;
-            img {
-                width: auto;
-            }
+            // img {
+            //     width: auto;
+            // }
             .card-body {
                 padding: 0;
             }
