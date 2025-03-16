@@ -120,7 +120,9 @@
         {% get_article_attributes 'footer' as links %}
         <div>
           <p><a href="http://ibict.br">IBICT</a></p>
-          <p><a href="mailto:{{mailto.value}}">Contato</a></p>
+          {% if mailto %}
+            <p><a href="mailto:{{mailto.value}}">Contato</a></p>
+          {% endif %}
         </div>
         <ul class="list-services">
         {% for link in links %}
