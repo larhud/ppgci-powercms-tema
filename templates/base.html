@@ -117,20 +117,14 @@
     <footer class="footer-wrapper">
       <div class="container">
         <div>
-          <p>PPGCI @ 2025</p>
-          <p><a href="http://www.ppgci.ufrj.br/pt/">PPGCI/IBICT</a></p>
+          <p><a href="http://ibict.br">IBICT</a></p>
+          <p><a href="mailto:coordenacao.ppgci@ibict.br">Contato</a></p>
         </div>
-
         <ul class="list-services">
+        {% get_article_attributes 'footer' as links %}
+        {% for link in links %}
           <li>
-            <a href="https://www.facebook.com/escritos.ibict/"
-              ><i class="fa fa-facebook"></i
-            ></a>
-          </li>
-          <li>
-            <a href="https://www.youtube.com/channel/UCAX8vmjItW2sgKga5kGQKig"
-              ><i class="fa fa-youtube-play"></i
-            ></a>
+            <a href="{{link.value}}"><i class="fa {{link.attrib}}"></i></a>
           </li>
         </ul>
       </div>
