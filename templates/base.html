@@ -116,17 +116,19 @@
 
     <footer class="footer-wrapper">
       <div class="container">
+        {% get_article 'footer' 'mailto' as mailto %}
+        {% get_article_attributes 'footer' as links %}
         <div>
           <p><a href="http://ibict.br">IBICT</a></p>
-          <p><a href="mailto:coordenacao.ppgci@ibict.br">Contato</a></p>
+          <p><a href="mailto:{{mailto.value}}">Contato</a></p>
         </div>
         <ul class="list-services">
-        {% get_article_attributes 'footer' as links %}
         {% for link in links %}
           <li>
             <a href="{{link.value}}"><i class="fa {{link.attrib}}"></i></a>
           </li>
         </ul>
+        {% endfor %}
       </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
