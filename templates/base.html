@@ -18,7 +18,7 @@
     <meta property="og:title" content="{% cleanwhitespace %}{% block ogtitle %}{% endblock %}{% endcleanwhitespace %}">
     <meta property="og:description" content="{% cleanwhitespace %}{% block ogdescription %}{% endblock %}{% endcleanwhitespace %}">
     <meta property="og:url" content="{{ request.build_absolute_uri }}">
-    <meta property="og:image" content="{% cleanwhitespace %}{% block allogimage %}https://{{ request.get_host }}{% block ogimage %}{% static 'img/escritosfb2.png' %}{% endblock %}{% endblock %}{% endcleanwhitespace %}">
+    <meta property="og:image" content="{% cleanwhitespace %}{% block allogimage %}https://{{ request.get_host }}{% block ogimage %}{% static 'img/ppgciLogo.png' %}{% endblock %}{% endblock %}{% endcleanwhitespace %}">
     <meta property="og:locale" content="pt_BR">
     <meta property="og:site_name" content="{{ header.title }}">
     <meta property="og:type" content="website">
@@ -51,7 +51,7 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}?v=1" />
     <link
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       rel="stylesheet"
