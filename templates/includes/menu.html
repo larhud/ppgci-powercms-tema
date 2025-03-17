@@ -2,21 +2,21 @@
 
 {% recursetree menu_itens %}
     {% if node.is_leaf_node %}
-        <li  class="nav-item">
+        <li class="nav-item">
             <a {% if node|is_active:request %} class="nav-link active"{% else %}class="nav-link" {% endif %} href="{{ node.get_link|default:"#" }}">{{ node.name }}</a>
         </li>
     {% else %}
         {% if node.get_level == 0 %}
             <li class="dropdown">
-                <a href="{{ node.get_link|default:"#" }}" class="dropdown-toggle{% if node|is_active:request %} active{% endif %}" data-toggle="dropdown">{{ node.name }} <span class="caret"></span></a>
-                <ul class="dropdown-menu">
+                <a href="{{ node.get_link|default:"#" }}" class="dropdown-toggle{% if node|is_active:request %} active{% endif %} nav-link" data-toggle="dropdown" data-bs-toggle="dropdown" aria-expanded="false">{{ node.name }} <span class="caret"></span></a>
+                <ul class="dropdown-menu" aria-labelledby="dropdown">
                     {{ children }}
                 </ul>
             </li>
         {% elif node.get_level > 0 %}
             <li class="dropdown">
-                <a href="{{ node.get_link|default:"#" }}" class="dropdown-toggle{% if node|is_active:request %} active{% endif %}" data-toggle="dropdown">{{ node.name }}</a>
-                <ul class="dropdown-menu">
+                <a href="{{ node.get_link|default:"#" }}" class="dropdown-toggle{% if node|is_active:request %} active{% endif %} nav-link" data-toggle="dropdown" data-bs-toggle="dropdown" aria-expanded="false">{{ node.name }}</a>
+                <ul class="dropdown-menu" aria-labelledby="dropdown">
                     {{ children }}
                 </ul>
             </li>
