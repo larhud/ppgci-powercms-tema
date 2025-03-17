@@ -18,7 +18,7 @@
     <meta property="og:title" content="{% cleanwhitespace %}{% block ogtitle %}{% endblock %}{% endcleanwhitespace %}">
     <meta property="og:description" content="{% cleanwhitespace %}{% block ogdescription %}{% endblock %}{% endcleanwhitespace %}">
     <meta property="og:url" content="{{ request.build_absolute_uri }}">
-    <meta property="og:image" content="{% cleanwhitespace %}{% block allogimage %}https://{{ request.get_host }}{% block ogimage %}{% static 'img/escritosfb2.png' %}{% endblock %}{% endblock %}{% endcleanwhitespace %}">
+    <meta property="og:image" content="{% cleanwhitespace %}{% block allogimage %}https://{{ request.get_host }}{% block ogimage %}{% static 'img/ppgciLogo.png' %}{% endblock %}{% endblock %}{% endcleanwhitespace %}">
     <meta property="og:locale" content="pt_BR">
     <meta property="og:site_name" content="{{ header.title }}">
     <meta property="og:type" content="website">
@@ -51,7 +51,7 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}?v=1" />
     <link
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       rel="stylesheet"
@@ -116,23 +116,21 @@
 
     <footer class="footer-wrapper">
       <div class="container">
+        {% get_article_attributes 'footer' 'mailto' as mailto %}
+        {% get_article_attributes 'footer' as links %}
         <div>
-          <p>PPGCI @ 2025</p>
-          <p><a href="http://www.ppgci.ufrj.br/pt/">PPGCI/IBICT</a></p>
+          <p><a href="http://ibict.br">IBICT</a></p>
+          {% if mailto %}
+            <p><a href="mailto:{{mailto.value}}">Contato</a></p>
+          {% endif %}
         </div>
-
         <ul class="list-services">
+        {% for link in links %}
           <li>
-            <a href="https://www.facebook.com/escritos.ibict/"
-              ><i class="fa fa-facebook"></i
-            ></a>
-          </li>
-          <li>
-            <a href="https://www.youtube.com/channel/UCAX8vmjItW2sgKga5kGQKig"
-              ><i class="fa fa-youtube-play"></i
-            ></a>
+            <a href="{{link.value}}"><i class="fa {{link.attrib}}"></i></a>
           </li>
         </ul>
+        {% endfor %}
       </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
