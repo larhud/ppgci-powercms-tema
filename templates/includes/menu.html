@@ -1,25 +1,17 @@
-{% load mptt_tags menu_tags %}
+{% load menu_tags menu_tags_tema %}
 
-{% recursetree menu_itens %}
-    {% if node.is_leaf_node %}
-        <li class="nav-item">
-            <a {% if node|is_active:request %} class="nav-link active"{% else %}class="nav-link" {% endif %} href="{{ node.get_link|default:"#" }}">{{ node.name }}</a>
-        </li>
-    {% else %}
-        {% if node.get_level == 0 %}
-            <li class="dropdown">
-                <a href="{{ node.get_link|default:"#" }}" class="dropdown-toggle{% if node|is_active:request %} active{% endif %} nav-link" data-toggle="dropdown" data-bs-toggle="dropdown" aria-expanded="false">{{ node.name }} <span class="caret"></span></a>
-                <ul class="dropdown-menu" aria-labelledby="dropdown">
-                    {{ children }}
-                </ul>
-            </li>
-        {% elif node.get_level > 0 %}
-            <li class="dropdown">
-                <a href="{{ node.get_link|default:"#" }}" class="dropdown-toggle{% if node|is_active:request %} active{% endif %} nav-link" data-toggle="dropdown" data-bs-toggle="dropdown" aria-expanded="false">{{ node.name }}</a>
-                <ul class="dropdown-menu" aria-labelledby="dropdown">
-                    {{ children }}
-                </ul>
-            </li>
+{% for item in menu_items %}
+    <li class="nav-item {% if item.children.exists %} dropdown{% endif %}">
+        <a href="{{ item.get_link|default:'#' }}"
+           class="nav-link {% if item|is_active:request %}active{% endif %}
+           {% if item.children.exists %} dropdown-toggle{% endif %}"
+           {% if item.children.exists %} data-bs-toggle="dropdown" {% endif %}>
+            {{ item.name }}
+        </a>
+        {% if item.children.exists %}
+            <ul class="dropdown-menu">
+                {% render_menu item %}
+            </ul>
         {% endif %}
-    {% endif %}
-{% endrecursetree %}
+    </li>
+{% endfor %}

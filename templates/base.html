@@ -1,5 +1,5 @@
 {% load static %}
-{% load menu_tags cms_tags static %}
+{% load menu_tags cms_tags static menu_tags_tema %}
 {% load google_translate %}
 
 <!DOCTYPE html>
@@ -106,7 +106,7 @@
 
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-            {% show_menu %}
+            {% render_menu None %}
           </ul>
         </div>
       </div>
