@@ -33,6 +33,7 @@ h2 {
         mix-blend-mode: multiply;
     }
     .busca {
+        align-items: center;
         input {
             border: 1px solid #cccccc;
             border-radius: 0 !important;
@@ -47,6 +48,10 @@ h2 {
             i {
                 color: #788288;
             }
+        }
+        .link-translate {
+            margin-left: 4px;
+            font-size: 14px;            
         }
     }
 }

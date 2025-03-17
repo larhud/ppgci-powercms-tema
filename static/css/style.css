@@ -36,6 +36,9 @@ h2 {
 .header .logo {
   mix-blend-mode: multiply;
 }
+.header .busca {
+  align-items: center;
+}
 .header .busca input {
   border: 1px solid #cccccc;
   border-radius: 0 !important;
@@ -50,6 +53,10 @@ h2 {
 }
 .header .busca .btn i {
   color: #788288;
+}
+.header .busca .link-translate {
+  margin-left: 4px;
+  font-size: 14px;
 }
 
 .conteudo {
