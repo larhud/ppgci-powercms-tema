@@ -3,9 +3,12 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
-    background: url(../img/background.jpg) no-repeat center center fixed;
+    background: url(../img/background.jpg) no-repeat top center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
 }
-
 
 h2 {
     font-family: "Barlow Condensed", sans-serif;
@@ -50,6 +53,7 @@ h2 {
 
 .conteudo {
     margin: 20px 0;
+    flex: 1;
     .container {
         padding: 30px;
         background: #fff;
@@ -72,6 +76,18 @@ h2 {
     border-left: 1px solid #fff;
     &:hover {
         color: #1b4a73;
+    }
+}
+
+.dropdown-menu {
+    @media screen and (min-width: 768px) {
+        width: 250px;
+    }
+
+    .dropdown-item {
+        white-space: normal;
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 18px;
     }
 }
 
