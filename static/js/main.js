@@ -6,3 +6,29 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   calendar.render();
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const languageOptions = document.querySelectorAll(".language-option");
+  const selectedLanguageSpan = document.getElementById("selectedLanguage");
+
+  // Define o idioma padrão como Português
+  let savedLanguage = localStorage.getItem("selectedLanguage") || "pt";
+  const selectedOption = document.querySelector(
+    `[data-lang="${savedLanguage}"]`
+  );
+  if (selectedOption) {
+    selectedLanguageSpan.innerHTML = selectedOption.innerHTML;
+  }
+
+  // Atualiza a seleção ao clicar
+  languageOptions.forEach((option) => {
+    option.addEventListener("click", function (event) {
+      event.preventDefault();
+      const selectedText = this.innerHTML;
+      selectedLanguageSpan.innerHTML = selectedText;
+
+      // Salva a escolha do usuário no localStorage
+      localStorage.setItem("selectedLanguage", this.dataset.lang);
+    });
+  });
+});
