@@ -235,3 +235,23 @@ h4 {
 .language-option {
     font-size: 22px;
 }
+
+.relacionados{
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+    .btnRelacionados{
+        border-radius: 0px;
+        background-color: #000;
+        border: none;
+        transition: all 0.3s ease-in-out;
+        color: #fff;
+        padding: 8px 20px;
+        text-decoration: none;
+        display: inline-block;
+        &:hover {
+            background-color: #000;
+            transform: scale(1.05);
+        }
+    }
+}
