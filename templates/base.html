@@ -82,7 +82,10 @@
             </button>
             {% google_translate type='vertical' language='pt-BR' mode="link" target_language="en" label="En" %}
 
-            <div class="dropdown">
+            <div class="dropdown" data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="🌎 Translate">
               <button
                 class="btn btn-outline-primary dropdown-toggle btnLinguagens"
                 type="button"
@@ -120,6 +123,22 @@
                     href="#"
                     data-lang="es"
                     >🇪🇸</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item language-option"
+                    href="#"
+                    data-lang="fr"
+                    >🇫🇷</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item language-option"
+                    href="#"
+                    data-lang="ch"
+                    >🇨🇳</a
                   >
                 </li>
               </ul>
