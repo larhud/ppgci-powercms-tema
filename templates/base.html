@@ -1,6 +1,6 @@
 {% load static %}
 {% load menu_tags cms_tags static menu_tags_tema %}
-{% load google_translate %}
+{% load translate %}
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -51,7 +51,7 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="{% static 'css/style.css' %}?v=2" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}?v=3" />
     <link
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       rel="stylesheet"
@@ -59,6 +59,7 @@
     {% block styles %}{% endblock %}
   </head>
   <body>    
+    
     <!-- Cabeçalho -->
     <header class="header">
       <div class="container">
@@ -80,7 +81,6 @@
             <button class="btn" type="submit">
               <i class="fa fa-search" aria-hidden="true"></i>
             </button>
-            {% google_translate type='vertical' language='pt-BR' mode="link" target_language="en" label="En" %}
 
             <div class="dropdown" data-bs-toggle="tooltip"
             data-bs-placement="top"
@@ -102,44 +102,19 @@
                 aria-labelledby="languageDropdown"
               >
                 <li>
-                  <a
-                    class="dropdown-item language-option"
-                    href="#"
-                    data-lang="en"
-                    >🇬🇧</a
-                  >
+                  {% google_translate_link language="en" class_style="dropdown-item language-option" data_lang="en" label="🇬🇧" %}
                 </li>
                 <li>
-                  <a
-                    class="dropdown-item language-option"
-                    href="#"
-                    data-lang="pt"
-                    >🇧🇷</a
-                  >
+                  {% google_translate_link language="pt-BR" class_style="dropdown-item language-option" data_lang="pt" label="🇧🇷" %}
                 </li>
                 <li>
-                  <a
-                    class="dropdown-item language-option"
-                    href="#"
-                    data-lang="es"
-                    >🇪🇸</a
-                  >
+                  {% google_translate_link language="es" class_style="dropdown-item language-option" data_lang="es" label="🇪🇸" %}
                 </li>
                 <li>
-                  <a
-                    class="dropdown-item language-option"
-                    href="#"
-                    data-lang="fr"
-                    >🇫🇷</a
-                  >
+                  {% google_translate_link language="fr" class_style="dropdown-item language-option" data_lang="fr" label="🇫🇷" %}
                 </li>
                 <li>
-                  <a
-                    class="dropdown-item language-option"
-                    href="#"
-                    data-lang="ch"
-                    >🇨🇳</a
-                  >
+                  {% google_translate_link language="zh-TW" class_style="dropdown-item language-option" data_lang="ch" label="🇨🇳" %}
                 </li>
               </ul>
             </div>
@@ -195,8 +170,15 @@
         </ul>
       </div>
     </footer>
+    <!-- Google Translate -->
+    <div id="google_translate_element" style="position: absolute; top: -9999px; left: -9999px;"></div>
+
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="{% static 'js/main.js' %}"></script>    
+    <script src="{% static 'js/main.js' %}"></script>      
+    <script
+      type="text/javascript"
+      src="{% static 'cms/js/google-translator.js' %}?cb=googleTranslateElementInit"
+    ></script>  
   </body>
 </html>

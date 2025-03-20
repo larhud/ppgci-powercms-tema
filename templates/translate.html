@@ -1,0 +1,22 @@
+  <a href="#" data-lang="{{data_lang}}" onclick="translateTo_{{data_lang}}()" class="{{class}}">{{label}}</a>
+  <script>
+    function translateTo_{{data_lang}}() {
+      let select = document.querySelector(".goog-te-combo");
+      if (select) {
+        select.value = "{{data_lang}}"; // Define o idioma para inglês
+        select.dispatchEvent(new Event("change")); // Dispara a mudança        
+      }
+    }      
+  </script>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        {
+          pageLanguage: "{{language}}",
+          layout: google.translate.TranslateElement.InlineLayout.{% if type == 'vertical' %}VERTICAL{% elif type == "horizontal" %}HORIZONTAL{% else %}SIMPLE{% endif %},
+        },
+        "google_translate_element"
+      );
+    }
+  </script>
