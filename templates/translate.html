@@ -3,7 +3,7 @@
     function translateTo_{{data_lang}}() {
       let select = document.querySelector(".goog-te-combo");
       if (select) {
-        select.value = "{{data_lang}}"; // Define o idioma para inglês
+        select.value = "{{target_language}}"; // Define o idioma para inglês
         select.dispatchEvent(new Event("change")); // Dispara a mudança        
       }
     }      
