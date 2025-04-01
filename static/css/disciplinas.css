@@ -1,0 +1,60 @@
+/* Estilização geral do container */
+.accordion-container {    
+    font-family: Arial, sans-serif;
+}
+
+/* Título do grupo de disciplinas */
+.accordion-title {
+    font-size: 1.5rem;
+    margin: 15px 0;
+    color: #333;
+}
+
+/* Estilização do accordion */
+.accordion-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+
+/* Botão do header do accordion */
+.accordion-header {
+    width: 100%;
+    background: #f8f8f8;
+    border: none;
+    padding: 12px 15px;
+    font-size: 1.2rem;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-header:hover {
+    background: #e0e0e0;
+}
+
+/* Ícone de seta */
+.arrow {
+    transition: transform 0.3s ease;
+}
+
+/* Conteúdo oculto por padrão */
+.accordion-content {
+    display: none;
+    padding: 10px 15px;
+    background: #fff;
+    border-top: 1px solid #ddd;
+}
+
+/* Classe para abrir o conteúdo */
+.accordion-item.active .accordion-content {
+    display: block;
+}
+
+/* Rotação da seta quando aberto */
+.accordion-item.active .arrow {
+    transform: rotate(180deg);
+}

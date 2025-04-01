@@ -1,0 +1,26 @@
+{% regroup disciplinas by tipo as disciplinas_by_tipo %}
+
+<div class="accordion-container">
+    {% for group in disciplinas_by_tipo %}
+        {% if not forloop.first %} 
+            <hr>  {# Linha divisória entre os grupos, exceto antes do primeiro #}
+        {% endif %}
+        
+        <h3 class="accordion-title">{{ group.grouper }}</h3>
+
+        <div class="accordion">
+            {% for disciplina in group.list|dictsort:"disciplina" %}
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        {{ disciplina.disciplina }}
+                        <span class="arrow">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <strong>Créditos: {{ disciplina.creditos }}</strong>
+                        <p>{{ disciplina.ementa }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+</div>
