@@ -30,7 +30,7 @@
           {% if disciplinas %}
             <div class="row">
                 <div class="col-md-12"> 
-                  {{ section.header }}             
+                  {{ section.header|safe }}             
                   {% include 'includes/disciplinas.html' %}
                 </div>
             </div>
