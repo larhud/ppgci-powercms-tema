@@ -36,10 +36,12 @@
                 <img src="{{pesquisador.url_foto}}" class="" alt="{{pesquisador.nome|default:''}}" />
                 <div class="card-body">
                   <h5 class="card-title">{{pesquisador.nome|default:""}}</h5>
-                  {%if pesquisador.tipo%} <p>Professor {{pesquisador.tipo}}</p> {% endif%}
+                  {% if pesquisador.id_cnpq %}<a href="http://lattes.cnpq.br/{{pesquisador.id_cnpq}}">Lattes</a>{% endif %}
+                  {% if pesquisador.orcid %}<a href="https://orcid.org/{{pesquisador.orcid}}">ORCID</a>{% endif %}
+                  {% if pesquisador.tipo %} <p>Professor {{pesquisador.tipo}}</p> {% endif%}
                   <p>
                     {{pesquisador.mini_bio|default:""}}
-                  </p>                  
+                  </p>
                 </div>
               </div>
             </div>
