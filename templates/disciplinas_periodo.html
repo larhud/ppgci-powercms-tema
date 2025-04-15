@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% load menu_tags cms_tags thumbnail static %}
+
+{% block title %}{{ section.title }} - {% endblock %}
+{% block ogtitle %}{{ section.title }} - {% endblock %}
+
+{% block description %}{{ section.header|striptags|truncatewords:20|safe }}{% endblock %}
+{% block ogdescription %}{{ section.header|striptags|truncatewords:20|safe }}{% endblock %}
+
+{% block keywords %}
+    {{ section.keywords }}
+{% endblock %}
+{% block styles %}
+  <link rel="stylesheet" href="{% static 'css/disciplinas.css' %}">
+{% endblock %}
+
+{% block content %}
+
+{% get_dataset slug=section.slug as disciplinas %}
+
+<main class="conteudo">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="titulo">
+            {{ section.title }}
+          </h2>
+          {% if disciplinas %}
+            <div class="row">
+                <div class="col-md-12"> 
+                {{ section.header|safe }}
+                <div class="accordion-container">
+                    <div class="accordion">
+                        {% for disciplina in disciplinas %}
+                            <div class="accordion-item">
+                                <button class="accordion-header">
+                                    {{ disciplina.disciplina }}<br/>{{ disciplina.calendario }}
+                                    <span class="arrow">▼</span>
+                                </button>
+                                <div class="accordion-content">
+                                    <p>{{ disciplina.ementa }}</p>
+                                    <p>{{ disciplina.codigo }} ({{ disciplina.creditos }} créditos)</p>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                </div>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </main>
+
+{% endblock %}
+
+{% block js %}
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const accordions = document.querySelectorAll(".accordion-header");
+
+    accordions.forEach((header) => {
+        header.addEventListener("click", function () {
+            const item = this.parentElement;
+
+            // Fecha todos os outros
+            document.querySelectorAll(".accordion-item").forEach((acc) => {
+                if (acc !== item) {
+                    acc.classList.remove("active");
+                }
+            });
+
+            // Alterna o item atual
+            item.classList.toggle("active");
+        });
+    });
+});
+
+</script>
+{% endblock %}
