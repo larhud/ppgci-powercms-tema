@@ -35,7 +35,7 @@
                 <img src="{{ pesquisador.url_foto }}" alt="{{ pesquisador.nome|default:'' }}" style="width: 200px; height: 200px; object-fit: cover; border-radius: 8px;" />
                 <div class="card-body">
                   <h5 class="card-title">{{pesquisador.nome|default:""}}</h5>
-                  {% if pesquisador.tipo %} <p>Professor {{pesquisador.tipo}}</p> {% endif%}
+                  {% if pesquisador.tipo %} <p>Docente {{pesquisador.tipo}}</p> {% endif%}
                   <p>
                     {{pesquisador.mini_bio|default:""}}
                   </p>
