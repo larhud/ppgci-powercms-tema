@@ -151,23 +151,69 @@
 
     {% block content %}{% endblock %}
 
-    <footer class="footer-wrapper">
-      <div class="container">
-        {% get_article_attributes 'footer' 'fa-envelop' as mailto %}
-        {% get_article_attributes 'footer' as links %}
-        <div>
-          <p><a href="http://ibict.br">IBICT</a></p>
-          {% if mailto %}
-            <p><a href="mailto:{{mailto.value}}">Contato</a></p>
-          {% endif %}
+    <footer class="container-fluid pb-0 footer-wrapper">
+      <div class="footer-curso bloco-1">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="footer-image text-center text-md-start">
+                <img
+                  src="{% static 'img/logo-enacin.png' %}"
+                  alt=""
+                  style="max-width: 210px"
+                />
+              </div>
+              <div class="info-container mt-3">
+                <h4>Rio de Janeiro</h4>
+                <ul>
+                  <li>
+                    Endereço: Rua Lauro Müller, 455 - Botafogo, Rio de Janeiro -
+                    RJ, 22290-160
+                  </li>
+                  <li>Telefone: (21) 3873-945</li>
+                  <li>Horário de funcionamento: 08h às 17h</li>
+                </ul>
+              </div>
+              <div class="info-container">
+                <h4>Brasília</h4>
+                <ul>
+                  <li>
+                    Endereço: SAUS Quadra 5 - Lote 6, Bloco H, Brasília - DF,
+                    70070-912
+                  </li>
+                  <li>Telefone: (61) 3217-6360</li>
+                  <li>Horário de funcionamento: 08h às 17h</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-6 text-md">
+              <div class="footer-image text-center text-md-end">
+                <img
+                  src="{% static 'img/logo-ibict-brasil.png' %}"
+                  alt=""
+                  style="max-width: 380px"
+                />
+              </div>
+            </div>
+          </div>
         </div>
-        <ul class="list-services">
-        {% for link in links %}
-          <li>
-            <a href="{{link.value}}"><i class="fa {{link.attrib}}"></i></a>
-          </li>
-        {% endfor %}
-        </ul>
+
+        <div class="footer-redes bloco-2 mt-3">
+          <div class="container">
+            {% get_article_attributes 'footer' as links %}
+            <div class="row">
+              <div class="col-md-8 text-center text-md-start">
+                ENACIN - Escola Nacional de Informação | todos os direitos
+                reservados
+              </div>
+              <div class="col md-4 text-center text-md-end redes">
+                {% for link in links %}
+                    <a href="{{link.value}}"><i class="fa {{link.attrib}}"></i></a>
+                {% endfor %}               
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
     <!-- Google Translate -->
