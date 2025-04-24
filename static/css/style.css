@@ -191,6 +191,13 @@ h4 {
 .linguagens {
   min-width: auto;
 }
+.linguagens li a img {
+  width: 20px;
+}
+
+.selectedLanguage img {
+  width: 20px;
+}
 
 .btnLinguagens {
   margin-left: 10px;
