@@ -1,4 +1,8 @@
-  <a href="#" data-lang="{{data_lang}}" onclick="translateTo_{{data_lang}}()" class="{{class}}">{{label}}</a>
+  {% load static %}
+  
+  <a href="#" data-lang="{{data_lang}}" onclick="translateTo_{{data_lang}}()" class="{{class}}">
+    <img style="height: 20px;" src={% static image %} alt={{alt}} />
+  </a>
   <script>
     function translateTo_{{data_lang}}() {
       let select = document.querySelector(".goog-te-combo");

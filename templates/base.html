@@ -94,7 +94,7 @@
                 aria-expanded="false"
                 title="Selecione o idioma"
               >
-                <span id="selectedLanguage">🇧🇷</span>
+                <span id="selectedLanguage">{% google_translate_link language="pt" class_style="dropdown-item language-option" data_lang="pt" image="br.png" alt="Português" %}</span>
                 <!-- Padrão definido -->
               </button>
               <ul
@@ -102,19 +102,19 @@
                 aria-labelledby="languageDropdown"
               >
                 <li>
-                  {% google_translate_link language="en" class_style="dropdown-item language-option" data_lang="en" label="🇬🇧" %}
+                  {% google_translate_link language="en" class_style="dropdown-item language-option" data_lang="en" image="en.png" alt="Inglês" %}
                 </li>
                 <li>
-                  {% google_translate_link language="pt" class_style="dropdown-item language-option" data_lang="pt" label="🇧🇷" %}
+                  {% google_translate_link language="pt" class_style="dropdown-item language-option" data_lang="pt" image="br.png" alt="Português" %}
                 </li>
                 <li>
-                  {% google_translate_link language="es" class_style="dropdown-item language-option" data_lang="es" label="🇪🇸" %}
+                  {% google_translate_link language="es" class_style="dropdown-item language-option" data_lang="es" image="sp.png" alt="Espanhol" %}
                 </li>
                 <li>
-                  {% google_translate_link language="fr" class_style="dropdown-item language-option" data_lang="fr" label="🇫🇷" %}
+                  {% google_translate_link language="fr" class_style="dropdown-item language-option" data_lang="fr" image="fr.png" alt="Francês" %}
                 </li>
                 <li>
-                  {% google_translate_link language="zh-TW" class_style="dropdown-item language-option" data_lang="ch" label="🇨🇳" %}
+                  {% google_translate_link language="zh-TW" class_style="dropdown-item language-option" data_lang="ch" image="ch.png" alt="Chinês" %}
                 </li>
               </ul>
             </div>
@@ -135,9 +135,8 @@
             data-bs-target="#navbarNav"
             aria-controls="navbarNav"
             aria-expanded="false"
-            aria-label="Alterna navegação"
-          >
-            <span class="navbar-toggler-icon"></span>
+            aria-image="    >
+        <span class="navbar-toggler-icon"></span>
           </button>
         </div>
 
