@@ -291,3 +291,119 @@ h4 {
         }
     }
 }
+
+
+.calendario {
+    border-radius: 10px;
+    box-shadow:
+        0 0 2px 0 rgba(0, 0, 0, 0.2),
+        0 5px 10px 0 rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+}
+
+.fc {
+    border: none;
+}
+
+.fc-toolbar {
+    background: none;
+    border: none;
+}
+
+.fc-event {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font-size: 0.85em;
+}
+.fc .fc-daygrid-day-frame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.fc .fc-bg-event {
+    border-radius: 10px;
+    opacity: 1;
+    background: #a4caeb;
+    cursor: pointer;
+}
+
+.fc .fc-daygrid-day.fc-day-today {
+    background-color: #efefef;
+
+    border-radius: 10px;
+    a {
+        color: #1b4a73 !important;
+    }
+}
+
+.fc .fc-daygrid-day-number,
+.fc .fc-col-header-cell-cushion {
+    text-decoration: none;
+}
+
+.fc .fc-daygrid-day-top {
+    justify-content: center;
+    align-items: center;
+}
+
+.fc .fc-day-other .fc-daygrid-day-top {
+    z-index: 10;
+    pointer-events: none;
+}
+
+.fc .fc-daygrid-day-number {
+    text-align: center;
+    float: none !important;
+    pointer-events: none;
+}
+
+.fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events {
+    min-height: auto !important;
+}
+
+.fc .fc-toolbar-title {
+    font-size: 20px;
+}
+
+.fc .fc-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    background-color: #fff;
+    border-radius: 12px;
+    width: 2.5rem;
+    height: 2.5rem;
+    box-shadow:
+        0 0 2px 0 rgba(0, 0, 0, 0.25),
+        0 0 10px 0 rgba(0, 0, 0, 0.15);
+    &:hover,
+    &:focus {
+        background-color: rgba(0, 0, 0, 0.15);
+    }
+}
+
+.fc .fc-button .fc-icon {
+    color: #000;
+}
+
+.fc-daygrid-event-dot {
+    background-color: #007bff;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    margin-right: 5px;
+}
+.fc-daygrid-event {
+    color: transparent; /* esconde o texto */
+    background-color: transparent; /* remove fundo */
+}
+.fc .fc-bg-event .fc-event-title {
+    display: none;
+}
