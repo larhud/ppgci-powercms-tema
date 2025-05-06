@@ -56,6 +56,8 @@
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/themes/light.css" />
+    
     {% block styles %}{% endblock %}
   </head>
   <body>    
@@ -225,6 +227,8 @@
       type="text/javascript"
       src="{% static 'cms/js/google-translator.js' %}?cb=googleTranslateElementInit"
     ></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
 
     {% block js %}{% endblock %}
   </body>
