@@ -191,16 +191,16 @@ h4 {
 
 .linguagens {
     min-width: auto;
-    li{
-        a{
-            img{
+    li {
+        a {
+            img {
                 width: 20px;
             }
         }
     }
 }
-.selectedLanguage{
-    img{
+.selectedLanguage {
+    img {
         width: 20px;
     }
 }
@@ -212,11 +212,11 @@ h4 {
     font-size: 22px;
 }
 
-.relacionados{
+.relacionados {
     margin-top: 30px;
     padding-top: 20px;
     border-top: 1px solid #ccc;
-    .btnRelacionados{
+    .btnRelacionados {
         border-radius: 0px;
         background-color: #000;
         border: none;
@@ -232,29 +232,27 @@ h4 {
     }
 }
 
-
 .footer-wrapper {
-    background-color: #18355E;
-    padding: 40px 0 0 0 ;
+    background-color: #18355e;
+    padding: 40px 0 0 0;
     color: #fff;
-    box-shadow: 1px -5px 15px 0px rgba(255,255,255,0.1);
+    box-shadow: 1px -5px 15px 0px rgba(255, 255, 255, 0.1);
     p {
         margin: 0;
         font-size: 11px;
         color: #fff;
     }
-    
-    
+
     a {
         text-decoration: none;
         color: #3ca4ff;
     }
 }
-.footer-redes{
+.footer-redes {
     background-color: rgba(0, 0, 0, 0.15);
     padding: 15px 0;
-    .container{
-        .row{
+    .container {
+        .row {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -266,7 +264,7 @@ h4 {
         justify-content: flex-end;
         align-items: center;
         gap: 10px;
-        a{
+        a {
             width: 40px;
             height: 40px;
             background-color: #323232;
@@ -280,18 +278,16 @@ h4 {
             cursor: pointer;
             text-align: center;
             transition: all 0.3s ease-in-out;
-            &:hover{
+            &:hover {
                 transform: scale(1.1);
             }
         }
         @media screen and (max-width: 768px) {
             justify-content: center;
             margin-top: 10px;
-            
         }
     }
 }
-
 
 .calendario {
     border-radius: 10px;
@@ -406,4 +402,13 @@ h4 {
 }
 .fc .fc-bg-event .fc-event-title {
     display: none;
+}
+
+.fc-theme-standard td,
+.fc-theme-standard th {
+    border: none !important;
+}
+
+.fc .fc-scrollgrid-liquid {
+    border: none !important;
 }
