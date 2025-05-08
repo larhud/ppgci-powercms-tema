@@ -229,7 +229,7 @@ h4 {
 }
 
 .footer-wrapper {
-  background-color: #18355E;
+  background-color: #18355e;
   padding: 40px 0 0 0;
   color: #fff;
   box-shadow: 1px -5px 15px 0px rgba(255, 255, 255, 0.1);
@@ -395,6 +395,15 @@ h4 {
 
 .fc .fc-bg-event .fc-event-title {
   display: none;
+}
+
+.fc-theme-standard td,
+.fc-theme-standard th {
+  border: none !important;
+}
+
+.fc .fc-scrollgrid-liquid {
+  border: none !important;
 }
 
 /*# sourceMappingURL=style.css.map */
