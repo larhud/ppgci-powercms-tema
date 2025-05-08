@@ -37,38 +37,30 @@ var calendar = new FullCalendar.Calendar(calendarEl, {
   },
   events: [
     {
-      title: "Reunião de Equipe",
-      start: "2025-05-01",
+      title: "Prazo Final dos Destaques Sucupira",
+      start: "2025-04-30",
       allDay: true,
       extendedProps: {
-        description: "Discussão sobre o projeto X.",
+        description: "Destaques Sucupira",
       },
     },
     {
-      title: "Entrega do Relatório",
-      start: "2025-05-01",
+      title: "Submissão ENANCIB",
+      start: "2025-05-10",
       allDay: true,
       extendedProps: {
-        description: "Prazo final para envio do relatório mensal.",
-        link: "https://example.com/relatorio",
+        description: "Prazo final para submissão de artigos para o ENANCIB",
+        link: "https://enancib2025.ibict.br",
       },
     },
     {
-      title: "Aniversário do João",
-      start: "2025-05-02",
+      title: "ENANCIB",
+      start: "2025-11-03",
+      end: "2025-11-07",
       allDay: true,
       extendedProps: {
-        description: "Comemoração do aniversário do João.",
-        link: "https://example.com/joao-aniversario",
-      },
-    },
-    {
-      title: "Aniversário do João",
-      start: "2025-05-30",
-      allDay: true,
-      extendedProps: {
-        description: "Comemoração do aniversário do João.",
-        link: "https://example.com/joao-aniversario",
+        description: "ENANCIB",
+        link: "https://enancib2025.ibict.br",
       },
     },
   ],
