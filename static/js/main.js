@@ -35,37 +35,32 @@ var calendar = new FullCalendar.Calendar(calendarEl, {
     center: "title",
     right: "next",
   },
-  events: [
-    {
-      title: "Prazo Final dos Destaques Sucupira",
-      start: "2025-04-30",
-      allDay: true,
-      extendedProps: {
-        description: "Destaques Sucupira",
-      },
-    },
-    {
-      title: "Submissão ENANCIB",
-      start: "2025-05-10",
-      allDay: true,
-      extendedProps: {
-        description: "Prazo final para submissão de artigos para o ENANCIB",
-        link: "https://enancib2025.ibict.br",
-      },
-    },
-    {
-      title: "ENANCIB",
-      start: "2025-11-03",
-      end: "2025-11-07",
-      allDay: true,
-      extendedProps: {
-        description: "ENANCIB",
-        link: "https://enancib2025.ibict.br",
-      },
-    },
-  ],
+
+  events: function (fetchInfo, successCallback, failureCallback) {
+    // Pega a data do início do mês atual exibido
+    let year = fetchInfo.start.getFullYear();
+    let month = String(fetchInfo.start.getMonth() + 2).padStart(2, "0");
+    if (month > 12) month = "01";
+
+    fetch(`/api/events/${year}-${month}`)
+      .then(response => {
+        if (!response.ok) throw new Error("Erro ao buscar eventos");
+        return response.json();
+      })
+      .then(data => {
+        // Espera-se que a API retorne eventos no formato:
+        // [{ title: "", start: "2025-08-05", allDay: true, extendedProps: {...} }]
+        successCallback(data);
+      })
+      .catch(error => {
+        console.error(error);
+        failureCallback(error);
+      });
+  },
+
   eventDisplay: "background",
   dayMaxEventRows: 10,
+
   eventDidMount: function (info) {
     const allEvents = info.view.calendar.getEvents();
     const targetDate = info.event.startStr;
@@ -105,11 +100,10 @@ var calendar = new FullCalendar.Calendar(calendarEl, {
     });
   },
 });
+
 calendar.render();
 
-const tooltipTriggerList = document.querySelectorAll(
-  '[data-bs-toggle="tooltip"]'
-);
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
 const tooltipList = [...tooltipTriggerList].map(
   (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
 );
