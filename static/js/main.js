@@ -40,7 +40,10 @@ var calendar = new FullCalendar.Calendar(calendarEl, {
     // Pega a data do início do mês atual exibido
     let year = fetchInfo.start.getFullYear();
     let month = String(fetchInfo.start.getMonth() + 2).padStart(2, "0");
-    if (month > 12) month = "01";
+    if (month > 12) {
+      month = "01";
+      year += 1; // Se for dezembro, incrementa o ano
+    }
 
     fetch(`/api/events/${year}-${month}`)
       .then(response => {
