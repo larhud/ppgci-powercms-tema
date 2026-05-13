@@ -100,6 +100,13 @@ var calendar = new FullCalendar.Calendar(calendarEl, {
       theme: "light",
       animation: "scale-subtle",
       delay: 0,
+      appendTo: () => document.body,
+      popperOptions: {
+        modifiers: [
+          { name: "flip", options: { fallbackPlacements: ["top", "right", "left"] } },
+          { name: "preventOverflow", options: { boundary: "viewport" } },
+        ],
+      },
     });
   },
 });
